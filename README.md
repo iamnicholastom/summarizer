@@ -23,7 +23,7 @@ After cloning the repository:
 1. Install dependencies:
 
    ```sh
-   npm install # or yarn install
+   npm install
    ```
 
 2. Set up your environment variables:
@@ -57,7 +57,8 @@ This will prompt the LLM model to summarize the content. The response will be st
 The project consists of two main files:
 
 - `summarizer.ts`: Defines the pipe configuration for the summarizer agent, using your API key (XAI_API_KEY)
-- `index.ts`: Entry point that initializes the pipe and demonstrates its usage with a sample job description
+
+* `index.ts`: Entry point that initializes the pipe and demonstrates its usage with technical documentation parsing, specifically focused on network protocols and TCP/IP specifications
 
 ## Configuration
 
