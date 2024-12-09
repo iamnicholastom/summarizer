@@ -1,4 +1,5 @@
 import { PipeI } from "@baseai/core";
+import getCurrentWeatherTool from "../tools/get-current-weather";
 
 const pipeSummarizer = (): PipeI => ({
   apiKey: process.env.XAI_API_KEY,
@@ -27,7 +28,7 @@ const pipeSummarizer = (): PipeI => ({
   ],
   variables: [],
   memory: [],
-  tools: [],
+  tools: [getCurrentWeatherTool()]
 });
 
 export default pipeSummarizer;

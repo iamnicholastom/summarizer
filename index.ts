@@ -16,12 +16,14 @@ Error and control messaging is handled by the Internet Control Message Protocol 
 
 Quality of Service (QoS) implementation relies on the Type of Service field in the IP header, which has been redefined as the Differentiated Services (DS) field. The first 6 bits comprise the Differentiated Services Code Point (DSCP), while the last 2 bits are used for Explicit Congestion Notification (ECN). The DSCP value determines the Per-Hop Behavior (PHB) applied to the packet, affecting queuing, scheduling, and drop precedence at each router. Standard PHBs include Default (best-effort), Expedited Forwarding (low latency), and Assured Forwarding (providing different levels of forwarding assurances).`;
 
+// const userMsg = `What's the weather in San Francisco?`;
+
 async function main() {
   const { stream } = await pipe.run({
     messages: [{ role: "user", content: userMsg }],
     stream: true,
   });
-
+  
   const runner = getRunner(stream);
 
   // Method 1: Using event listeners
@@ -40,6 +42,13 @@ async function main() {
   runner.on("error", (error) => {
     console.error("Error:", error);
   });
+  
+	// const response = await pipe.run({
+	// 	messages: [{role: 'user', content: userMsg}],
+	// 	stream: false,
+	// });
+
+  // console.log(response.completion)
 }
 
 main();
