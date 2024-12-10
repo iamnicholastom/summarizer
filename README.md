@@ -51,24 +51,3 @@ To run the summarizer agent locally:
    ```
 
 This will prompt the LLM model to summarize the content. The response will be streamed directly in your terminal. All this happens locally on your machine.
-
-## Code Structure
-
-The project consists of two main files:
-
-- `summarizer.ts`: Defines the pipe configuration for the summarizer agent, using your API key (OPENAI_API_KEY)
-
-* `index.ts`: Entry point that initializes the pipe and demonstrates its usage with technical documentation parsing, specifically focused on network protocols and TCP/IP specifications
-
-## Configuration
-
-### Pipe Configuration
-
-In `summarizer.ts`, you'll find settings for the AI model (openai:gpt-4o-mini), temperature, max tokens, etc., which you can adjust for different summarization outcomes. Make sure the apiKey matches your .env variable name.
-
-## Troubleshooting
-
-### Common Issues
-
-- **API Key Issues**: Confirm your API key is correctly set in your .env file. If authentication errors occur, verify the key name and value match what's expected in summarizer.ts
-- **Model Performance**: If the model openai:gpt-4o-mini doesn't perform as expected, you might need to adjust settings or consider alternative models if available
