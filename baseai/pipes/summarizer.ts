@@ -2,11 +2,11 @@ import { PipeI } from "@baseai/core";
 import getCurrentWeatherTool from "../tools/get-current-weather";
 
 const pipeSummarizer = (): PipeI => ({
-  apiKey: process.env.XAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
   name: "summarizer",
   description: "A pipe that summarizes content and makes it less wordy'",
   status: "public",
-  model: "xai:grok-beta",
+  model: "openai:gpt-4o-mini",
   stream: true,
   json: false,
   store: true,
